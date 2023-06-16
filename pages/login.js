@@ -3,6 +3,10 @@ export const WELCOME_TEXT = 'Welcome back';
 export const SIGN_INTO_ACCOUNT_TEXT = 'Sign into your account below';
 export const SIGN_UP_TEXT = 'Need an account first? Sign Up.';
 export const LOGIN_URL = 'https://happy-field-011ab7b10.2.azurestaticapps.net/login.html';
+export const EMAIL = 'email';
+export const INVALID_EMAIL = 'invalid email';
+export const PASSWORD = 'password';
+export const INVALID_PASSWORD = 'invalid password';
 
 export class LoginPage {
 

@@ -1,13 +1,57 @@
 import { test, expect } from '@playwright/test';
 
-import { LOGIN_URL, LoginPage, SIGN_INTO_ACCOUNT_TEXT, SIGN_UP_TEXT, WELCOME_TEXT } from '../pages/login';
+import { EMAIL, PASSWORD, LOGIN_URL, LoginPage, SIGN_INTO_ACCOUNT_TEXT, SIGN_UP_TEXT, WELCOME_TEXT, INVALID_EMAIL, INVALID_PASSWORD } from '../pages/login';
 import { Base } from '../pages/base';
 
-test('Sign in', async ({ page }) => {
+/**
+ * This method signs in the user. Since there are no validations yet, all sign in 
+ * test cases will pass
+ */
+
+test('Sign in with valid username and valid password', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const base = new Base(page);
     await base.goToUrl(LOGIN_URL);
-    await loginPage.signIn('test', 'pass');
+    await loginPage.signIn(EMAIL, PASSWORD);
+
+});
+
+/**
+ * This method signs in the user. Since there are no validations yet, all sign in 
+ * test cases will pass
+ */
+
+test('Sign in with invalid username', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const base = new Base(page);
+    await base.goToUrl(LOGIN_URL);
+    await loginPage.signIn(INVALID_EMAIL, PASSWORD);
+
+});
+
+/**
+ * This method signs in the user. Since there are no validations yet, all sign in 
+ * test cases will pass
+ */
+
+test('Sign in with invalid password', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const base = new Base(page);
+    await base.goToUrl(LOGIN_URL);
+    await loginPage.signIn(EMAIL, INVALID_PASSWORD);
+
+});
+
+/**
+ * This method signs in the user. Since there are no validations yet, all sign in 
+ * test cases will pass
+ */
+
+test('Sign in with invalid username and invalid password', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const base = new Base(page);
+    await base.goToUrl(LOGIN_URL);
+    await loginPage.signIn(INVALID_EMAIL, INVALID_PASSWORD);
 
 });
 
