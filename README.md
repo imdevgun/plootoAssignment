@@ -1,5 +1,5 @@
-# plootoAssignment
-This repository covers tests for the following modules:
+
+This repository covers general tests for the following modules:
 1. Login
 2. Company Selection
 3. Dashboard
